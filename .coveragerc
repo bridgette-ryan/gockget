@@ -1,0 +1,8 @@
+[run]
+omit =
+    app/config.py
+    app/banner.py
+
+[report]
+show_missing = True
+skip_covered = True

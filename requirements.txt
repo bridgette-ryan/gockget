@@ -1,0 +1,5 @@
+xnxx_api
+av
+httpx[http2]
+colorama
+pytest-cov
