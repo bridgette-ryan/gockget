@@ -1,8 +1,12 @@
 # GockGet 💅
 A multi-threaded XNXX bulk downloader for Python
 
-![CI](https://github.com/bridgette-ryan/gockget/actions/workflows/ci.yml/badge.svg) ![Python](https://img.shields.io/badge/python-3.11%2B-blue) [![codecov](https://codecov.io/gh/bridgette-ryan/gockget/branch/main/graph/badge.svg)](https://codecov.io/gh/bridgette-ryan/gockget) ![Lint](https://img.shields.io/badge/lint-ruff-purple) ![License](https://img.shields.io/badge/license-GPLv3-blue.svg)
-
+![CI](https://github.com/bridgette-ryan/gockget/actions/workflows/ci.yml/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/gockget)
+![Python](https://img.shields.io/pypi/pyversions/gockget)
+[![codecov](https://codecov.io/gh/bridgette-ryan/gockget/branch/main/graph/badge.svg)](https://codecov.io/gh/bridgette-ryan/gockget)
+![Lint](https://img.shields.io/badge/lint-ruff-purple)
+![License](https://img.shields.io/badge/license-GPLv3-blue.svg)
 
 ## Welcome Gorgeous 💅
 
@@ -56,9 +60,18 @@ You'll need:
 * Basic coping skills
 * Mild contempt for bad software
 
-Install:
+## Install
+
+From PyPI (recommended):
 
 ```bash
+pip install gockget
+```
+
+From source:
+```bash
+git clone https://github.com/bridgette-ryan/gockget.git
+cd gockget
 pip install .
 ```
 
