@@ -9,15 +9,7 @@ from app.models import ScrapeItem
 from app.downloader import download_video
 
 
-from typing import List
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from pathlib import Path
-import time
-import random
 
-from app.config import WORKING_DIR
-from app.models import ScrapeItem
-from app.downloader import download_video
 
 
 def download_scrape_list(
