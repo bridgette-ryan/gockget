@@ -6,7 +6,11 @@ venv/
 .scrape_cache/
 scraped/
 scraping/
+dist/
+build/
+*.egg-info/
 *.log
 .vscode/
 .idea/
 scrape.txt
+coverage.xml

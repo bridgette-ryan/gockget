@@ -1,4 +1,3 @@
-from app.requirements import check_requirements
 from app.banner import print_welcome
 from app.loader import load_scrape_file
 from app.utils import clear_errors
@@ -11,8 +10,6 @@ from app.config import FILE_NAME
 
 def main():
     args = parse_args()
-
-    check_requirements()
 
     if not args.transphobia:
         print_welcome()

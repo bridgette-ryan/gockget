@@ -1,6 +1,9 @@
 # GockGet 💅
 A multi-threaded XNXX bulk downloader for Python
 
+![CI](https://github.com/bridgette-ryan/gockget/actions/workflows/ci.yml/badge.svg) ![Python](https://img.shields.io/badge/python-3.11%2B-blue) [![codecov](https://codecov.io/gh/bridgette-ryan/gockget/branch/main/graph/badge.svg)](https://codecov.io/gh/bridgette-ryan/gockget) ![Lint](https://img.shields.io/badge/lint-ruff-purple) ![License](https://img.shields.io/badge/license-GPLv3-blue.svg)
+
+
 ## Welcome Gorgeous 💅
 
 So you found this repo.
@@ -10,6 +13,8 @@ Maybe you're here because you needed a practical **XNXX bulk downloader**.
 Maybe you're here because some abandoned script from years ago finally collapsed under the weight of neglect.
 
 Maybe you're here because downloading one file at a time is for people with limitless patience and weak convictions.
+
+Maybe you're here because authoritarian governments want to expose your PII to weird and untested third party age verification vendors.
 
 Whatever brought you here:
 
@@ -46,15 +51,21 @@ It is efficient, resilient, and only slightly dramatic.
 
 You'll need:
 
-* Python 3.10+
+* Python 3.11+
 * Internet access
 * Basic coping skills
 * Mild contempt for bad software
 
-Install dependencies:
+Install:
 
 ```bash
-pip install -r requirements.txt
+pip install .
+```
+
+For Development:
+
+```bash
+pip install -e .[dev]
 ```
 
 ---
@@ -68,7 +79,7 @@ Because boundaries matter.
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 ### Windows (Command Prompt)
@@ -76,7 +87,7 @@ pip install -r requirements.txt
 ```cmd
 python -m venv .venv
 .\.venv\Scripts\activate.bat
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 ### macOS / Linux
@@ -84,7 +95,7 @@ pip install -r requirements.txt
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 When you're done:
@@ -100,7 +111,7 @@ deactivate
 Run it:
 
 ```bash
-python main.py
+gockget
 ```
 
 That will process pending entries in `scrape.txt`.
@@ -114,19 +125,19 @@ That will process pending entries in `scrape.txt`.
 For days when joy is unavailable.
 
 ```bash
-python main.py --transphobia
+gockget --transphobia
 ```
 
 ### Choose thread count
 
 ```bash
-python main.py --threads=8
+gockget --threads=8
 ```
 
 ### Retry failed items
 
 ```bash
-python main.py --retry-errors
+gockget --retry-errors
 ```
 
 Because healing is possible.
@@ -134,7 +145,7 @@ Because healing is possible.
 ### Reset all errors
 
 ```bash
-python main.py --clear-errors
+gockget --clear-errors
 ```
 
 Turns every `ERROR` back into `FALSE`.
@@ -142,7 +153,7 @@ Turns every `ERROR` back into `FALSE`.
 ### Verify existing files
 
 ```bash
-python main.py --verify
+gockget --verify
 ```
 
 Checks files on disk and updates statuses accordingly.
@@ -152,7 +163,7 @@ Useful after crashes, interruptions, moving files, or poor decisions.
 ### Help
 
 ```bash
-python main.py --help
+gockget --help
 ```
 
 ---
@@ -211,6 +222,12 @@ With coverage:
 pytest --cov=app
 ```
 
+Lint:
+
+```bash
+ruff check .
+```
+
 This project maintains high automated test coverage.
 
 ---
@@ -218,12 +235,13 @@ This project maintains high automated test coverage.
 ## Project Structure
 
 ```text
-app/        core logic
-tests/      unit tests
-scraped/    completed downloads
-scraping/   temporary / partial files
-main.py     entry point
-scrape.txt  input list
+app/                     core logic
+tests/                   unit tests
+.github/workflows/       CI pipeline
+pyproject.toml           package config
+scraped/                 completed downloads
+scraping/                temporary files
+scrape.txt               input list
 ```
 
 ---
